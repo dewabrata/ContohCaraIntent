@@ -9,11 +9,6 @@ import android.widget.Button;
 
 public class Form1 extends AppCompatActivity {
 
-
-    public void HelloWorld(){
-        System.out.println("Hallo");
-    }
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +29,9 @@ public class Form1 extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
                 intent.putExtra("sms_body", "Hello Dari Juara Coding");
-                //this is comment
 
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
-                    System.out.println("hallo");
                 }
             }
         });
