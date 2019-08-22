@@ -40,9 +40,6 @@ public class Form1 extends AppCompatActivity {
                     startActivity(intent);
                     System.out.println("hallo");
                 }
-
-                //ini commite asal2an
-                //ini commite makin asal
             }
         });
     }
