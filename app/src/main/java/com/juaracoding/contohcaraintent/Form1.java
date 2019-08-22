@@ -30,8 +30,10 @@ public class Form1 extends AppCompatActivity {
                 intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
                 intent.putExtra("sms_body", "Hello Dari Juara Coding");
                 //this is comment
+
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
+                    System.out.println("hallo");
                 }
             }
         });
