@@ -14,22 +14,25 @@ import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 
+import com.juaracoding.contohcaraintent.adapter.CustomAdapter;
+
 import java.util.List;
 
 public class Form1 extends AppCompatActivity {
 
-    Spinner list ;
+    Spinner list,list2 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_layout);
 
         list = (Spinner)findViewById(R.id.spinner);
+        list2 = (Spinner)findViewById(R.id.spinner2);
 
 
 
         ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(this,
-                android.R.layout.simple_spinner_dropdown_item,
+                android.R.layout.simple_list_item_1,
                 new DataFactory().createDataSimpleList());
 
         list.setAdapter(spinnerArrayAdapter);
@@ -43,6 +46,11 @@ public class Form1 extends AppCompatActivity {
 
             }
         });
+
+
+        CustomAdapter customAdapter = new CustomAdapter(this,
+                R.layout.list_item_custom,new DataFactory().createDataSimpleList());
+        list2.setAdapter(customAdapter);
     }
 
     public void callIntentSMS(){
