@@ -9,6 +9,10 @@ import android.widget.Button;
 
 public class Form1 extends AppCompatActivity {
 
+
+    public void HelloWorld(){
+        System.out.println("Hallo");
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
