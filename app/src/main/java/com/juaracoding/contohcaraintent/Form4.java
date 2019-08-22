@@ -9,6 +9,7 @@ import android.widget.Button;
 public class Form4 extends AppCompatActivity {
 
     public static int ID_FORM_4 =4444;
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
