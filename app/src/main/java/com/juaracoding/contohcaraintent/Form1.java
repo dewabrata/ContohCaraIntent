@@ -34,5 +34,28 @@ public class Form1 extends AppCompatActivity {
 
         list.setAdapter(spinnerArrayAdapter);
 
+
+        ((Button)(findViewById(R.id.btnSendSMS))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+               callViewBrowser();
+
+            }
+        });
+    }
+
+    public void callIntentSMS(){
+        Uri uriSms = Uri.parse("smsto:1234567899");
+        Intent intentSMS = new Intent(Intent.ACTION_SENDTO, uriSms);
+        intentSMS.putExtra("sms_body", "The SMS text");
+        startActivity(intentSMS);
+    }
+
+    public  void callViewBrowser(){
+        String url = "http://www.juaracoding.com";
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
     }
 }
