@@ -35,18 +35,5 @@ public class Form1 extends AppCompatActivity {
                 }
             }
         });
-
-        ((Button)findViewById(R.id.btnSMS)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
-                intent.putExtra("sms_body", "Hello Dari Juara Coding");
-
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(intent);
-                }
-            }
-        });
     }
 }
