@@ -8,6 +8,6 @@ public class StevanActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_stevan);
+    setContentView(R.layout.activity_stevan); //
   }
 }
