@@ -11,6 +11,6 @@ public class bekCOdeMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bek_code_main);
 
 
-        //test
+        //test..
     }
 }
