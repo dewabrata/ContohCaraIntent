@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatSpinner;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -14,13 +16,17 @@ import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 
+import com.juaracoding.contohcaraintent.adapter.AdapterTodoListRecycle;
 import com.juaracoding.contohcaraintent.adapter.CustomAdapter;
+import com.juaracoding.contohcaraintent.adapter.ToDoListAdapter;
+import com.juaracoding.contohcaraintent.model.ToDoList;
 
 import java.util.List;
 
 public class Form1 extends AppCompatActivity {
 
     Spinner list,list2 ;
+    RecyclerView listTodo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +34,7 @@ public class Form1 extends AppCompatActivity {
 
         list = (Spinner)findViewById(R.id.spinner);
         list2 = (Spinner)findViewById(R.id.spinner2);
-
+        listTodo=(RecyclerView)findViewById(R.id.listToDoList);
 
 
         ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(this,
@@ -48,9 +54,15 @@ public class Form1 extends AppCompatActivity {
         });
 
 
-        CustomAdapter customAdapter = new CustomAdapter(this,
-                R.layout.list_item_custom,new DataFactory().createDataSimpleList());
+        ToDoListAdapter customAdapter = new ToDoListAdapter(this,
+                R.layout.to_do_list_item,new DataFactory().createToDoList());
         list2.setAdapter(customAdapter);
+
+        AdapterTodoListRecycle toadapter = new AdapterTodoListRecycle (this,new DataFactory().createToDoList());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Form1.this, LinearLayoutManager.VERTICAL, false);
+        listTodo.setLayoutManager(linearLayoutManager);
+
+        listTodo.setAdapter(toadapter);
     }
 
     public void callIntentSMS(){

@@ -1,5 +1,7 @@
 package com.juaracoding.contohcaraintent;
 
+import com.juaracoding.contohcaraintent.model.ToDoList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,19 @@ public class DataFactory {
 
         return list;
 
+    }
+
+
+    public List<ToDoList> createToDoList (){
+
+        List<ToDoList> todo = new ArrayList<ToDoList>();
+
+        todo.add(new ToDoList("Jon","Belajar bootcamp","26 Agustus 2019","Belajar bareng sama Gina",1));
+        todo.add(new ToDoList("Jun","Belajar bootcamp","26 Agustus 2019","Nemenin jon",2));
+        todo.add(new ToDoList("Aldi","Belajar bootcamp","26 Agustus 2019","Belajar sendiri",3));
+
+
+      return todo;
     }
 
 
